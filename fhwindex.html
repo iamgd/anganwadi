@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FHW Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <style>
+       /* Global Reset */
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Container to hold all sections */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            padding-bottom: 30px; /* Space for footer */
+        }
+
+        /* Top header style */
+        .top-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #211661;
+            color: rgb(241, 240, 245);
+            width: 100%;
+            padding: 20px;
+        }
+
+        .top-header .title {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Copperplate Gothic Bold', sans-serif;
+            text-align: center;
+            flex: 1;
+        }
+
+        .logo {
+            width: 65px;
+            height: 65px;
+        }
+
+        /* Middle header style */
+        .middle-header {
+            display: flex;
+            align-items: center;
+            background-color: #e7dfdf;
+            width: 100%;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .middle-header .left-section {
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+
+        .middle-header .title {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Copperplate Gothic Light', sans-serif;
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Navbar style */
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #d581a1;
+            background-image: url('night.jpg');
+            width: 100%;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 2px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s;
+            font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+            font-weight: 700;
+        }
+
+        .navbar a:hover {
+            background-color: #fad2e0;
+            color: #d581a1;
+        }
+
+
+        /* Content Area */
+        .content {
+            flex-grow: 1; /* This makes the content area expand to fill the space */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Center the content */
+            padding: 20px;
+            color: black;
+        }
+
+        /* Footer styling */
+        .footer {
+            background-color: #211661;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Top Header -->
+        <div class="top-header">
+            <img src="images/logo2.png" alt="Left Logo" class="logo">
+            <div class="title">GOVERNMENT OF PUDUCHERRY</div>
+            <img src="images/logo1.jpg" alt="Right Logo" class="logo">
+        </div>
+
+         <!-- Middle Header -->
+         <div class="middle-header">
+            <div class="left-section">
+                <img src="images/logo3.jpg" alt="Middle Logo" class="logo">
+            </div>
+            <div class="title">DEPARTMENT OF WOMAN AND CHILD DEVELOPMENT</div>
+        </div>
+
+         <!-- Navbar -->
+         <div class="navbar">
+            <a href="fhwindex.html" target="_self">HOME</a> 
+            <a href="fhwview_updates.php" target="_self">DAILY UPDATE</a>
+            <a href="fhwtodaymealsnotifi.php" target="_self">TODAY MEALS</a>
+            <a href="fhwcampnotifi.php" target="_self">CAMP DETAILS</a> 
+            <a href="fhwfeedback.php" target="_self">FEEDBACK</a>
+            <a href="fhwdisplay_schemes.php" target="_self">SCHEMES</a>
+            <a href="fhwprofile.php" target="_self">PROFILE</a>
+            <a href="fhwlogout.php" class="btn btn-danger">
+                <i class="bi bi-box-arrow-right"></i>
+            </a>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content">
+            <h2>Welcome to the Family Head Woman Dashboard</h2>
+            <!-- Add more staff-related content here -->
+        </div>
+
+        <div class="footer">
+            &copy; 2024 Department of Woman and Child Development, Government of Puducherry. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camp Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <style>
+
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Container to hold all sections */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            padding-bottom: 30px; /* Space for footer */
+        }
+
+        /* Top header style */
+        .top-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #211661;
+            color: rgb(241, 240, 245);
+            width: 100%;
+            padding: 20px;
+        }
+
+        .top-header .title {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Copperplate Gothic Bold', sans-serif;
+            text-align: center;
+            flex: 1;
+        }
+
+        .logo {
+            width: 65px;
+            height: 65px;
+        }
+
+        /* Middle header style */
+        .middle-header {
+            display: flex;
+            align-items: center;
+            background-color: #e7dfdf;
+            width: 100%;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .middle-header .left-section {
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+
+        .middle-header .title {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Copperplate Gothic Light', sans-serif;
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Navbar Style */
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #d581a1;
+            background-image: url('night.jpg');
+            padding: 9px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 2px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s;
+            font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+            font-weight: 400;
+        }
+
+        .navbar a:hover {
+            background-color: #fad2e0;
+            color: #d581a1;
+        }
+
+
+        /* Content Area */
+        .content {
+            flex-grow: 1; /* This makes the content area expand to fill the space */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Center the content */
+            padding: 20px;
+            color: black;
+        }
+
+        /* Footer styling */
+        .footer {
+            background-color: #211661;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+     
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+
+        .container1 {
+            width: 50%;
+            padding: 20px;
+            background-color: rgb(228, 195, 195);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 35px;
+            margin-top: 30px;
+            font-family: Comic Sans MS;
+            
+        }
+
+        .container h2 {
+            text-align: center;
+            color: #211661;
+            font-family: Eras Bold ITC;
+           
+        }
+
+        label {
+            font-weight: bold;
+            color: rgb(81, 2, 15);
+            margin-top: 10px;
+            display: block;
+        }
+
+        input[type="text"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-group button {
+            padding: 10px;
+            width: 30%;
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn-save {
+            background-color: #28a745;
+        }
+
+        .btn-submit {
+            background-color: #007bff;
+        }
+
+        .btn-delete {
+            background-color: #dc3545;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Top Header -->
+        <div class="top-header">
+            <img src="images/logo2.png" alt="Left Logo" class="logo">
+            <div class="title">GOVERNMENT OF PUDUCHERRY</div>
+            <img src="images/logo1.jpg" alt="Right Logo" class="logo">
+        </div>
+
+         <!-- Middle Header -->
+         <div class="middle-header">
+            <div class="left-section">
+                <img src="images/logo3.jpg" alt="Middle Logo" class="logo">
+            </div>
+            <div class="title">DEPARTMENT OF WOMAN AND CHILD DEVELOPMENT</div>
+        </div>
+
+        <!-- Navbar -->
+        <div class="navbar">
+            <a href="staffindex.html" target="_self">HOME</a>
+            <a href="dailynotificationstaff.html" target="_self">DAILY NOTE</a>
+            <a href="attendance.html" target="_self">ATTENDANCE</a>
+            <a href="todaymeals.html" target="_self">TODAY MEALS</a>
+            <a href="inventory.html" target="_self">MEAL INVENTORY</a>
+          
+            <a href="camp_details.html" target="_self">CAMP DETAILS</a>
+           
+            <a href="stafffeedback.php" target="_self">FEEDBACK</a>
+            <a href="staffprofile.php" target="_self">PROFILE</a>
+            <a href="stafflogout.php" class="btn btn-danger">
+                <i class="bi bi-box-arrow-right"></i>
+            </a>
+        </div>
+
+       
+
+    <div class="container1">
+        <h2>CAMP DETAILS</h2>
+        <form id="campForm">
+            <label for="campName">Camp Name:</label>
+            <input type="text" id="campName" name="camp_name" required>
+
+            <label for="campLocation">Location:</label>
+            <input type="text" id="campLocation" name="camp_location" required>
+
+            <label for="campDate">Date:</label>
+            <input type="date" id="campDate" name="camp_date" required>
+
+            <div class="btn-group">
+                <button type="button" class="btn-save" onclick="submitForm('save')">Save</button>
+                <button type="button" class="btn-submit" onclick="submitForm('submit')">Submit</button>
+                <button type="button" class="btn-delete" onclick="submitForm('delete')">Delete</button>
+            </div>
+        </form>
+        <div id="message" style="margin-top: 10px; color: green; text-align: center;"></div>
+    </div>
+
+    <script>
+        function submitForm(action) {
+            const formData = new FormData(document.getElementById("campForm"));
+            formData.append(action, true);
+
+            fetch("camp_details.php", {
+                method: "POST",
+                body: formData,
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("message").innerText = data;
+                document.getElementById("campForm").reset(); // Clear the form
+            });
+        }
+    </script>
+
+<div class="footer">
+    &copy; 2024 Department of Woman and Child Development, Government of Puducherry. All rights reserved.
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARENT REGISTRATION</title>
+    <style>
+           /* Global Reset */
+           * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Align content to the top */
+            padding-bottom: 20px; /* Space for footer */
+            overflow: hidden; /* Prevent page scrolling */
+        }
+
+        /* Top Header */
+        .top-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #211661;
+            color: rgb(241, 240, 245);
+            width: 100%;
+            padding: 20px;
+        }
+
+        .top-header .title {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Copperplate Gothic Bold', sans-serif;
+            flex: 1;
+            text-align: center;
+        }
+
+        .logo {
+            width: 65px;
+            height: 65px;
+        }
+
+        /* Middle Header */
+        .middle-header {
+            display: flex;
+            align-items: center;
+            background-color: #e7dfdf;
+            width: 100%;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .middle-header .title {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Copperplate Gothic Light', sans-serif;
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #d581a1;
+            width: 100%;
+            padding: 9px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            white-space: nowrap;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 2px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s;
+            font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+            font-weight: 400;
+        }
+
+        .navbar a:hover {
+            background-color: #fad2e0;
+            color: #d581a1;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #211661;
+            font-family: Eras Bold ITC;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .registration-form {
+        background-color: #211661;
+        max-width: 400px;
+        margin: 30px auto;
+        padding: 20px;
+        border-radius: 35px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        color: white;
+        overflow-y: auto;
+        max-height: 350px;
+    }
+    .registration-form h2 {
+        font-family: Eras Bold ITC;
+        color: #211661;
+        text-align: center;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        font-weight: bold;
+        color: white;
+        display: block;
+        margin-bottom: 6px;
+        margin-top: 12px;
+        font-family: Comic Sans MS;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 12px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        box-sizing: border-box;
+        font-size: 16px;
+        background-color: #f9f9f9;
+    }
+    .form-group input[type="file"] {
+        padding: 3px;
+    }
+    .hidden {
+        display: none;
+    }
+    .error {
+        color: red;
+        font-size: 14px;
+    }
+    .form-group button {
+        width: 100%;
+        background-color: #5573b4;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .form-group-child {
+        width: 100%;
+        background-color: #e7e7e7;
+        padding: 15px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+    }
+    .form-group-child label {
+        font-weight: bold;
+        color: #333;
+        margin-top: 8px;
+        display: block;
+    }
+    .form-group-child input,
+    .form-group-child select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 6px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        background-color: #fafafa;
+    }
+    .form-group-child input[type="file"] {
+        padding: 3px;
+        background-color: #fff;
+        border-radius: 4px;
+    }
+
+    /* Styling for inline labels and radio buttons */
+.form-group label,
+.form-group input[type="radio"] {
+    display: inline-flex;
+    align-items: center; /* Center-aligns label and radio button vertically */
+    margin-right: 10px;
+}
+
+.form-group input[type="radio"] {
+    transform: translateY(30px); /* Adjusts radio button position slightly */
+    margin-right: 5px; /* Adds space after each radio button */
+}
+
+    /* Footer styling */
+    .footer {
+        background-color: #211661;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        width: 100%;
+        font-family: Arial, sans-serif;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Top Header -->
+        <div class="top-header">
+            <img src="images/logo2.png" alt="Left Logo" class="logo">
+            <div class="title">GOVERNMENT OF PUDUCHERRY</div>
+            <img src="images/logo1.jpg" alt="Right Logo" class="logo">
+        </div>
+
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="left-section">
+                <img src="images/logo3.jpg" alt="Middle Logo" class="logo">
+            </div>
+            <div class="title">DEPARTMENT OF WOMAN AND CHILD DEVELOPMENT</div>
+        </div>
+
+        <!-- Navbar -->
+        <div class="navbar">
+            <a href="index.html">HOME</a>
+            <a href="stafflogin.php">STAFF</a>
+            <a href="parentlogin.php">PARENT</a>
+            <a href="widowlogin.php">WIDOW</a>
+            <a href="seniorlogin.php">SENIOR CITIZEN</a>
+            <a href="fhwlogin.php">FHW</a>
+        </div>
+        <h2>PARENT REGISTRATION</h2>
+<div class="registration-form">
+   
+    <form id="registrationForm" action="parentregister.php" method="POST" enctype="multipart/form-data">
+        <!-- Personal Details -->
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="husbandName">Husband Name:</label>
+            <input type="text" id="husbandName" name="husbandName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone No:</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}">
+            <div class="error" id="phoneError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="photo">Photo:</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+        </div>
+
+        <div class="form-group">
+            <label for="nativePlace">Native Place:</label>
+            <input type="text" id="nativePlace" name="nativePlace" required>
+        </div>
+
+        <div class="form-group">
+            <label for="aadharNo">Aadhar No:</label>
+            <input type="text" id="aadharNo" name="aadharNo" required pattern="[0-9]{12}">
+        </div>
+
+        <!-- Pregnancy Status -->
+        <div class="form-group">
+            <label>Pregnancy Status:</label>
+            <input type="radio" id="pregnantYes" name="pregnancyStatus" value="yes"> Yes
+            <input type="radio" id="pregnantNo" name="pregnancyStatus" value="no"> No
+        </div>
+
+        <!-- Additional fields for pregnancy -->
+        <div id="pregnancyDetails" class="hidden">
+            <div class="form-group">
+                <label for="pregnancyMonth">Month of Pregnancy:</label>
+                <input type="number" id="pregnancyMonth" name="pregnancyMonth" min="1" max="9">
+            </div>
+            <div class="form-group">
+                <label for="bankPassbook">Bank Passbook:</label>
+                <input type="file" id="bankPassbook" name="bankPassbook" accept="image/*">
+            </div>
+        </div>
+
+        <!-- Child Details -->
+        <div id="childDetailsSection" class="hidden">
+            <div class="form-group">
+                <label for="childCount">Number of Children:</label>
+                <input type="number" id="childCount" name="childCount" min="1" max="5">
+            </div>
+            <div id="childContainer"></div>
+        </div>
+
+        <!-- Login Details -->
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Register</button>
+        </div>
+    </form>
+</div>
+
+<script>
+// JavaScript to dynamically display pregnancy or child details
+document.getElementById('pregnantYes').addEventListener('change', function() {
+    document.getElementById('pregnancyDetails').classList.remove('hidden');
+    document.getElementById('childDetailsSection').classList.add('hidden');
+});
+document.getElementById('pregnantNo').addEventListener('change', function() {
+    document.getElementById('pregnancyDetails').classList.add('hidden');
+    document.getElementById('childDetailsSection').classList.remove('hidden');
+});
+
+// JavaScript to dynamically add child details form
+document.getElementById('childCount').addEventListener('input', function() {
+    const count = parseInt(this.value, 10);
+    const container = document.getElementById('childContainer');
+    container.innerHTML = '';
+    for (let i = 1; i <= count; i++) {
+        const childDiv = document.createElement('div');
+        childDiv.className = 'form-group-child';
+        childDiv.innerHTML = `
+            <label>Child ${i} Details:</label>
+            <input type="text" name="childName${i}" placeholder="Name" required>
+            <input type="date" name="childDob${i}" placeholder="Date of Birth" required>
+            <select name="childGender${i}">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <input type="number" name="childHeight${i}" placeholder="Height" required>
+            <input type="number" name="childWeight${i}" placeholder="Weight" required>
+            <input type="file" name="birthCertificate${i}" accept="image/*" required>
+        `;
+        container.appendChild(childDiv);
+    }
+});
+</script>
+<div class="footer">
+    &copy; 2024 Department of Woman and Child Development, Government of Puducherry. All rights reserved.
+</div>
+</div>
+</body>
+</html>

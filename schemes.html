@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schemes Table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Container to hold all sections */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            padding-bottom: 30px; /* Space for footer */
+        }
+
+        /* Top header style */
+        .top-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #211661;
+            color: rgb(241, 240, 245);
+            width: 100%;
+            padding: 20px;
+        }
+
+        .top-header .title {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Copperplate Gothic Bold', sans-serif;
+            text-align: center;
+            flex: 1;
+        }
+
+        .logo {
+            width: 65px;
+            height: 65px;
+        }
+
+        /* Middle header style */
+        .middle-header {
+            display: flex;
+            align-items: center;
+            background-color: #e7dfdf;
+            width: 100%;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .middle-header .left-section {
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+
+        .middle-header .title {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Copperplate Gothic Light', sans-serif;
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Navbar style */
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #d581a1;
+            background-image: url('night.jpg');
+            width: 100%;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 2px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s;
+            font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+            font-weight: 700;
+        }
+
+        .navbar a:hover {
+            background-color: #fad2e0;
+            color: #d581a1;
+        }
+
+        .footer {
+            background-color: #211661;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container1 {
+            width: 80%;
+            margin: 20px auto;
+        }
+        h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Top Header -->
+        <div class="top-header">
+            <img src="images/logo2.png" alt="Left Logo" class="logo">
+            <div class="title">GOVERNMENT OF PUDUCHERRY</div>
+            <img src="images/logo1.jpg" alt="Right Logo" class="logo">
+        </div>
+
+         <!-- Middle Header -->
+         <div class="middle-header">
+            <div class="left-section">
+                <img src="images/logo3.jpg" alt="Middle Logo" class="logo">
+            </div>
+            <div class="title">DEPARTMENT OF WOMAN AND CHILD DEVELOPMENT</div>
+        </div>
+
+        <!-- Navbar -->
+        <div class="navbar">
+        <a href="parentindex.html" target="_self">HOME</a>
+            <a href="parentview_updates.php" target="_self">DAILY UPDATE</a>
+            <a href="parenttodaymealsnotifi.php" target="_self">TODAY MEALS</a>
+            <a href="parentcampnotifi.php" target="_self">CAMP DETAILS</a>
+            
+            <a href="parentfeedback.php" target="_self">FEEDBACK</a>
+            <a href="" target="_self">SCHEMES</a>
+            <a href="parentprofile.php" target="_self">PROFILE</a>
+        </div>
+
+  
+    <div class="container1">
+        <h2>Government Schemes</h2>
+        
+        <!-- Dropdown to filter by type -->
+        <label for="typeFilter">Filter by Type: </label>
+        <select id="typeFilter">
+            <option value="">All</option>
+            <option value="parents">Parents</option>
+            <option value="widow">Widow</option>
+            <option value="senior_citizen">Senior Citizen</option>
+            <option value="fhw">Family Head Woman</option>
+        </select>
+        
+        <table id="schemesTable">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Scheme Name</th>
+                    <th>Link</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic rows will go here -->
+            </tbody>
+        </table>
+        
+        <button onclick="addRow()">Add Row</button>
+    </div>
+
+    <script>
+        // Fetch and display all schemes on page load or filter change
+        function fetchSchemes(type = '') {
+            fetch("scheme.php?type=" + type)
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const tableBody = document.getElementById("schemesTable").getElementsByTagName("tbody")[0];
+                    tableBody.innerHTML = ""; // Clear existing rows
+                    data.schemes.forEach(scheme => addSchemeToTable(scheme));
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        }
+
+        // Add a new row for entering a scheme
+        function addRow() {
+            const table = document.getElementById("schemesTable").getElementsByTagName("tbody")[0];
+            const newRow = table.insertRow();
+
+            const typeCell = newRow.insertCell(0);
+            const nameCell = newRow.insertCell(1);
+            const linkCell = newRow.insertCell(2);
+            const actionsCell = newRow.insertCell(3);
+
+            // Type dropdown
+            typeCell.innerHTML = `
+                <select>
+                    <option value="parents">Parents</option>
+                    <option value="widow">Widow</option>
+                    <option value="senior_citizen">Senior Citizen</option>
+                    <option value="fhw">Family Head Woman</option>
+                </select>`;
+
+            nameCell.innerHTML = `<input type="text" placeholder="Enter Scheme Name">`;
+            linkCell.innerHTML = `<input type="text" placeholder="Enter Link">`;
+            actionsCell.innerHTML = `<button onclick="postScheme(this)">Post</button> <button onclick="deleteRowTemp(this)">Delete</button>`;
+        }
+
+        // Add a new scheme to the database
+        function postScheme(button) {
+            const row = button.closest("tr");
+            const type = row.cells[0].querySelector("select").value;
+            const schemeName = row.cells[1].querySelector("input").value;
+            const link = row.cells[2].querySelector("input").value;
+
+            if (schemeName && link && type) {
+                fetch("scheme.php", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ scheme_name: schemeName, link: link, type: type })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        addSchemeToTable(data.scheme);
+                        row.remove();  // Remove the input row after posting
+                    } else {
+                        alert(data.message || "Failed to add scheme.");
+                    }
+                })
+                .catch(error => console.error("Error:", error));
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+
+        // Delete a scheme from the database
+        function deleteRow(button, id) {
+            if (confirm("Are you sure you want to delete this scheme?")) {
+                fetch("scheme.php", {
+                    method: "DELETE",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ id: id })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        button.closest("tr").remove();
+                    } else {
+                        alert(data.message || "Failed to delete scheme.");
+                    }
+                })
+                .catch(error => console.error("Error:", error));
+            }
+        }
+
+        // Add a scheme to the table
+        function addSchemeToTable(scheme) {
+            const table = document.getElementById("schemesTable").getElementsByTagName("tbody")[0];
+            const newRow = table.insertRow();
+
+            newRow.insertCell(0).innerText = scheme.type;
+            newRow.insertCell(1).innerText = scheme.scheme_name;
+            newRow.insertCell(2).innerText = scheme.link;
+            const actionsCell = newRow.insertCell(3);
+
+            actionsCell.innerHTML = `<button onclick="deleteRow(this, ${scheme.id})">Delete</button>`;
+        }
+
+        // Filter schemes based on selected type
+        document.getElementById("typeFilter").addEventListener("change", function() {
+            const type = this.value;
+            fetchSchemes(type);
+        });
+
+        // Initialize by fetching all schemes
+        fetchSchemes();
+    </script>
+    <div class="footer">
+        &copy; 2024 Department of Woman and Child Development, Government of Puducherry. All rights reserved.
+    </div>
+</div>
+</body>
+</html>

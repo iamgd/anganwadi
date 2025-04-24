@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Daily Updates</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            color: rgb(81, 2, 15);
+            background-color: #f8f9fa;
+        }
+
+        /* Top Header Style */
+        .top-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #211661;
+            color: rgb(241, 240, 245);
+            padding: 20px;
+            width: 100%;
+        }
+
+        .top-header .title {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Copperplate Gothic Bold', sans-serif;
+            text-align: center;
+            flex: 1;
+        }
+
+        .logo {
+            width: 65px;
+            height: 65px;
+        }
+
+        /* Middle Header Style */
+        .middle-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #e7dfdf;
+            padding: 10px 20px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .middle-header .left-section {
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+
+        .middle-header .title {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Copperplate Gothic Light', sans-serif;
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Navbar Style */
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #d581a1;
+            background-image: url('night.jpg');
+            padding: 9px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 2px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s;
+            font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+            font-weight: 400;
+        }
+
+        .navbar a:hover {
+            background-color: #fad2e0;
+            color: #d581a1;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #211661;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        /* Container Styling */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+            padding-bottom: 70px;
+        }
+
+        /* Main Content Styling with Scroll */
+        .container1 {
+            background-color: rgb(228, 195, 195);
+            padding: 20px;
+            width: 50%;
+            height: 400px; /* Limit height for scrolling */
+            overflow-y: auto; /* Enable vertical scrolling */
+            margin: 30px auto;
+            border-radius: 35px;
+        }
+
+        /* Form Styling */
+        .update-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            height: 200px;
+            resize: none;
+            border-radius: 30px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .btn-group button {
+            flex: 1;
+            margin: 0 5px;
+            padding: 10px;
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-success { background-color: #28a745; }
+        .btn-primary { background-color: #007bff; }
+        .btn-danger { background-color: #dc3545; }
+
+        button:hover { opacity: 0.8; }
+
+        h2 { 
+            font-family: Eras Bold ITC;
+            color:#211661;
+            text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Top Header -->
+        <div class="top-header">
+            <img src="images/logo2.png" alt="Left Logo" class="logo">
+            <div class="title">GOVERNMENT OF PUDUCHERRY</div>
+            <img src="images/logo1.jpg" alt="Right Logo" class="logo">
+        </div>
+
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="left-section">
+                <img src="images/logo3.jpg" alt="Middle Logo" class="logo">
+            </div>
+            <div class="title">DEPARTMENT OF WOMAN AND CHILD DEVELOPMENT</div>
+        </div>
+
+        <!-- Navbar -->
+        <div class="navbar">
+            <a href="staffindex.html" target="_self">HOME</a>
+            <a href="dailynotificationstaff.html" target="_self">DAILY NOTE</a>
+            <a href="attendance.html" target="_self">ATTENDANCE</a>
+            <a href="todaymeals.html" target="_self">TODAY MEALS</a>
+            <a href="inventory.html" target="_self">MEAL INVENTORY</a>
+         
+            <a href="camp_details.html" target="_self">CAMP DETAILS</a>
+         
+            <a href="stafffeedback.php" target="_self">FEEDBACK</a>
+            <a href="staffprofile.php" target="_self">PROFILE</a>
+            <a href="stafflogout.php" class="btn">
+                <i class="bi bi-box-arrow-right"></i>
+            </a>
+        </div>
+
+        <!-- Main Content with Scrollable Container -->
+        <div class="container1">
+            <h2>DAILY UPDATES</h2>
+            <div class="update-form">
+                <form action="dailynotificationstaff.php" method="POST">
+                    <div class="form-group">
+                        <textarea name="daily_update" placeholder="Write your daily update here..."></textarea>
+                    </div>
+                    <div class="btn-group">
+                        <button type="submit" name="post" class="btn btn-success">Post</button>
+                        <button type="submit" name="save" class="btn btn-primary">Save</button>
+                        <button type="submit" name="delete" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            &copy; 2024 Department of Woman and Child Development, Government of Puducherry. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

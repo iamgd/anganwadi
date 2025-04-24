@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Content with Image Slider</title>
+    <style>
+        /* Reset margins and paddings for the entire page */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%; /* Ensure full page width */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Main content container */
+        .container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Ensure footer stays at the bottom */
+            background-color: #f5f5f5;
+        }
+
+        /* Main content area styling */
+        .main-content {
+            flex-grow: 1;
+            overflow-y: auto; /* Allow scrolling in the main content area */
+            padding: 20px;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            color: #211661;
+        }
+
+        /* Image slider styling */
+        .image-slider {
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        .image-slider img {
+            width: 600px;
+            height: 380px;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <!-- Main container to ensure layout structure -->
+    <div class="container">
+        <!-- Main content section -->
+        <div class="main-content">
+            <!-- Content section -->
+            <div class="content">
+                <h1>Welcome to the Department of Woman and Child Development</h1>
+                <p>Each day of our lives, we make deposits in the memory banks of our children...</p>
+            </div>
+
+            <!-- Image Slider -->
+            <div class="image-slider">
+                <img id="sliderImage" src="images/cen4.jpg" alt="Image Slider">
+            </div>
+        </div>
+
+       
+    </div>
+
+    <script>
+        // Image slider logic
+        window.onload = function () {
+            const images = [
+                "images/cen1.jpg",
+                "images/cen2.jpg",
+                "images/cen3.jpg",
+                "images/cen4.jpg"
+            ];
+
+            let currentImageIndex = 0;
+            const sliderImage = document.getElementById('sliderImage');
+
+            // Function to change the image every second
+            function nextImage() {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                sliderImage.src = images[currentImageIndex];
+            }
+
+            // Set interval to change the image every 1 second
+            setInterval(nextImage, 1000);
+        };
+    </script>
+
+</body>
+</html>

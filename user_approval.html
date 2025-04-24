@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approval Filter</title>
+    <script>
+        function loadApprovalTable() {
+            const selectedOption = document.getElementById("approvalSelect").value;
+            const iframe = document.getElementById("approvalFrame");
+
+            if (selectedOption) {
+                iframe.src = selectedOption + ".php";
+                iframe.style.display = "block";
+            } else {
+                iframe.style.display = "none";
+            }
+        }
+    </script>
+    <style>
+           * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Container to hold all sections */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            padding-bottom: 30px; /* Space for footer */
+        }
+
+        /* Top header style */
+        .top-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #211661;
+            color: rgb(241, 240, 245);
+            width: 100%;
+            padding: 20px;
+        }
+
+        .top-header .title {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Copperplate Gothic Bold', sans-serif;
+            text-align: center;
+            flex: 1;
+        }
+
+        .logo {
+            width: 65px;
+            height: 65px;
+        }
+
+        /* Middle header style */
+        .middle-header {
+            display: flex;
+            align-items: center;
+            background-color: #e7dfdf;
+            width: 100%;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .middle-header .left-section {
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+
+        .middle-header .title {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Copperplate Gothic Light', sans-serif;
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Navbar style */
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #d581a1;
+            background-image: url('night.jpg');
+            width: 100%;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 2px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s;
+            font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+            font-weight: 700;
+        }
+
+        .navbar a:hover {
+            background-color: #fad2e0;
+            color: #d581a1;
+        }
+
+        .footer {
+            background-color: #211661;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+        
+       
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #211661;
+            font-family: Eras Bold ITC;
+        }
+
+        /* Centering and styling the dropdown */
+        .dropdown-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            width: 200px;
+        }
+
+        select:hover, select:focus {
+            border-color: #211661;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            outline: none;
+        }
+
+        /* Styling the iframe */
+        #approvalFrame {
+            width: 80%;
+            height: 250px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            display: none; /* Hidden by default */
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <center class="container">
+        <!-- Top Header -->
+        <div class="top-header">
+            <img src="images/logo2.png" alt="Left Logo" class="logo">
+            <div class="title">GOVERNMENT OF PUDUCHERRY</div>
+            <img src="images/logo1.jpg" alt="Right Logo" class="logo">
+        </div>
+
+         <!-- Middle Header -->
+         <div class="middle-header">
+            <div class="left-section">
+                <img src="images/logo3.jpg" alt="Middle Logo" class="logo">
+            </div>
+            <div class="title">DEPARTMENT OF WOMAN AND CHILD DEVELOPMENT</div>
+        </div>
+
+        <!-- Navbar -->
+      <!-- Navbar -->
+      <div class="navbar">
+        <a href="scheme.html" target="_self">SCHEMES</a>
+        <a href="user_approval.html" target="_self">APPROVAL</a>
+
+        
+
+    </div>
+
+
+    <h2>Select Approval Type</h2><br><center>    
+    <!-- Dropdown to select approval type -->
+    <select id="approvalSelect" onchange="loadApprovalTable()">
+        <option value="">-- Select Approval Type --</option>
+        <option value="staff_approve">Staff Approve</option>
+        <option value="parent_approve">Parent Approve</option>
+        <option value="widow_approve">Widow Approve</option>
+        <option value="senior_approve">Senior Approve</option>
+        <option value="fhw_approve">FHW Approve</option>
+    </select>
+    <br>
+    <h2>Approval Table</h2>
+    
+    <!-- iFrame to load selected PHP table page -->
+    <iframe id="approvalFrame" style="width: 800px; height: 280px; display: none;" frameborder="0"></iframe></center>
+        
+    <div class="footer">
+        &copy; 2024 Department of Woman and Child Development, Government of Puducherry. All rights reserved.
+    </div>
+</div>
+</body>
+</html>

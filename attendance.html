@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: rgb(81, 2, 15);
+            background-color: #f8f9fa;
+        }
+
+        .top-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #211661;
+            color: rgb(241, 240, 245);
+            padding: 20px;
+            width: 100%;
+        }
+
+        .top-header .title {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Copperplate Gothic Bold', sans-serif;
+            text-align: center;
+            flex: 1;
+        }
+
+        .logo {
+            width: 65px;
+            height: 65px;
+        }
+
+        /* Middle header style */
+        .middle-header {
+            display: flex;
+            align-items: center;
+            background-color: #e7dfdf;
+            width: 100%;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .middle-header .left-section {
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+
+        .middle-header .title {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Copperplate Gothic Light', sans-serif;
+            flex: 1;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #d581a1;
+            background-image: url('night.jpg');
+            padding: 9px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 2px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s;
+            font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+            font-weight: 400;
+        }
+
+        .navbar a:hover {
+            background-color: #fad2e0;
+            color: #d581a1;
+        }
+
+        .footer {
+            background-color: #211661;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+            padding-bottom: 70px;
+        }
+
+        .container1 {
+            margin-top: 20px;
+            background-color: rgb(228, 195, 195);
+            font-family: Comic Sans MS;
+            padding: 20px;
+            width: 50%;
+            height: 420px;
+            overflow-y: auto;
+            border-radius: 35px;
+        }
+
+        .attendance-form input[type="text"], 
+        .attendance-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 30px;
+        }
+
+        #submitBtn {
+            background-color: rgb(81, 2, 15);
+            color: white;
+            width: 100%;
+            border-radius: 30px;
+            height: 40px;
+            margin-top: 10px;
+            font-family: Comic Sans MS;
+        }
+
+        #submitBtn:hover {
+            background-color: rgb(100, 2, 25);
+            color: #fff;
+        }
+
+        .table-container {
+            margin-top: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: rgb(81, 2, 15);
+            color: white;
+           
+        }
+
+        h2 {
+            text-align: center;
+            font-family: Eras Bold ITC;
+            color:#211661;
+            
+        }
+
+        .empty-table {
+            text-align: center;
+            padding: 20px;
+            color: rgb(81, 2, 15);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+         <!-- Top Header -->
+         <div class="top-header">
+            <img src="images/logo2.png" alt="Left Logo" class="logo">
+            <div class="title">GOVERNMENT OF PUDUCHERRY</div>
+            <img src="images/logo1.jpg" alt="Right Logo" class="logo">
+        </div>
+
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="left-section">
+                <img src="images/logo3.jpg" alt="Middle Logo" class="logo">
+            </div>
+            <div class="title">DEPARTMENT OF WOMAN AND CHILD DEVELOPMENT</div>
+        </div>
+
+        <!-- Navbar -->
+        <div class="navbar">
+            <a href="staffindex.html" target="_self">HOME</a>
+            <a href="dailynotificationstaff.html" target="_self">DAILY NOTE</a>
+            <a href="attendance.html" target="_self">ATTENDANCE</a>
+            <a href="todaymeals.html" target="_self">TODAY MEALS</a>
+            <a href="inventory.html" target="_self">MEAL INVENTORY</a>
+          
+            <a href="camp_details.html" target="_self">CAMP DETAILS</a>
+          
+            <a href="stafffeedback.php" target="_self">FEEDBACK</a>
+            <a href="staffprofile.php" target="_self">PROFILE</a>
+            <a href="stafflogout.php" class="btn btn-danger">
+                <i class="bi bi-box-arrow-right"></i>
+            </a>
+        </div>
+
+       
+        <!-- Main Content -->
+        <div class="container1">
+            <h2>ATTENDANCE MANAGEMENT</h2>
+
+            <div class="attendance-form">
+                <form id="attendanceForm">
+                    <div class="form-group">
+                        <label for="name">Enter Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Attendance Status</label>
+                        <select id="status" class="form-control" required>
+                            <option value="Present">Present</option>
+                            <option value="Absent">Absent</option>
+                        </select>
+                    </div>
+                    <button id="submitBtn" type="button" onclick="saveAttendance()">Submit Attendance</button>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <h4>Attendance Records</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendanceTableBody">
+                        <tr>
+                            <td colspan="3" class="empty-table">No attendance records available.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            &copy; 2024 Department of Woman and Child Development, Government of Puducherry. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        function saveAttendance() {
+            const name = document.getElementById('name').value;
+            const status = document.getElementById('status').value;
+
+            if (name === '') {
+                alert('Please enter a name.');
+                return;
+            }
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'attendance.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    alert(xhr.responseText);
+                    fetchAttendance();
+                }
+            };
+            xhr.send(`name=${name}&status=${status}`);
+        }
+
+        function fetchAttendance() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'attendance.php', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const attendanceData = xhr.responseText;
+                    document.getElementById('attendanceTableBody').innerHTML = attendanceData || `
+                        <tr>
+                            <td colspan="3" class="empty-table">No attendance records available.</td>
+                        </tr>
+                    `;
+                }
+            };
+            xhr.send();
+        }
+
+        window.onload = fetchAttendance;
+    </script>
+</body>
+</html>
